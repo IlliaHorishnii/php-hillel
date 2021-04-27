@@ -3,22 +3,22 @@ namespace Facade;
 
 class Facade
 {
-    private string $api;
+    public const DEFAULT_API_URL = 'www/Facade/MyApi.php';
+    private string $apiUrl;
+    private array $data;
 
-    public function __construct($url)
+    public function __construct($url = self::DEFAULT_API_URL, $data)
     {
-        $this->api = $url;
+        $this->apiUrl = $url;
+        $this->data = $data;
     }
 
-    public function apiConnect($textDesign, $word)
+    public function apiConnect()
     {
-        $curl = curl_init('www/Facade/MyApi.php');
+        $curl = curl_init($this->apiUrl);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, [
-            'textDesign' => $textDesign,
-            'word' => $word]
-        );
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $this->data);
 
         $result = curl_exec($curl);
         curl_close($curl);
@@ -26,8 +26,9 @@ class Facade
         return $this->apiResult($result);
     }
 
-    public function apiResult($result)
+    private function apiResult($result)
     {
         return json_decode($result);
     }
+
 }
