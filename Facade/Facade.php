@@ -10,19 +10,19 @@ class Facade
         $this->api = $url;
     }
 
-    public function apiConnect($mode, $word)
+    public function apiConnect($textDesign, $word)
     {
         $curl = curl_init('www/Facade/MyApi.php');
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, [
-            'mode' => $mode,
+            'textDesign' => $textDesign,
             'word' => $word]
         );
 
         $result = curl_exec($curl);
         curl_close($curl);
-        
+
         return $this->apiResult($result);
     }
 

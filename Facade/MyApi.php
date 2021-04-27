@@ -1,8 +1,8 @@
 <?php
-$mode = $_POST['mode'];
+$textDesign = $_POST['textDesign'];
 $word = $_POST['word'];
 
-switch ($mode) {
+switch ($textDesign) {
     case "i":
         $string = "<i>".$word."</i>";
         break;
