@@ -9,7 +9,7 @@ class SilverSubscription extends Subscription
     public function __construct($name)
     {
         $this->name = $name;
-        echo $this->subscribe()."<br />";
+        echo $this->subscribe()." <br />";
     }
 
     public function subscribe(): string
