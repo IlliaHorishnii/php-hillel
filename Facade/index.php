@@ -1,8 +1,7 @@
 <?php
 require_once("Facade.php");
-require_once("MyApi.php");
 
 use Facade\Facade;
 
-$obj = new Facade();
-echo $obj->apiResult('word', 'b');
+$obj = new Facade('http://www/MyApi.php');
+echo $obj->apiConnect('b', 'first');
