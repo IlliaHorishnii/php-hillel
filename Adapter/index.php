@@ -9,6 +9,7 @@ use Adapter\JsonAdaptee;
 
 $array = [
          2,
+        3,
         'test',
          'for',
        'json',
