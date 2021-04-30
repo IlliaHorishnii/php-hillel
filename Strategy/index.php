@@ -13,7 +13,7 @@
 
 $obj = new DefaultSubscription('Gabe');
 PHP_EOL;
-echo $obj->getSubType()."<br>";
+echo $obj->getSubType()." <br>";
 
 $obj = new SilverSubscription('Yuri');
 PHP_EOL;

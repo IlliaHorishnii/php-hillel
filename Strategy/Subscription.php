@@ -7,5 +7,5 @@ abstract class Subscription
 
     abstract public function unsubscribe(): string;
 
-    abstract public function getSubType();
+    abstract public function getSubType(): string;
 }

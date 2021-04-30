@@ -21,7 +21,7 @@ class Context
 
     public function onlineCall($friendName)
     {
-        echo "calling to ".$friendName."...<br>";
+        echo "calling to ".$friendName."... <br>";
         return md5(time());
     }
 }

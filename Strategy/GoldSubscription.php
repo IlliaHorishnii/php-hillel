@@ -31,7 +31,7 @@ class GoldSubscription extends Subscription
     {
         $obj = new Context();
         $obj->photoLoader($link);
-        return 'Success!';
+        return ' Success!';
     }
 
     public function onlineCall($friendName)
