@@ -1,0 +1,39 @@
+<html lang="ru">
+<head>
+<title>Комментарии</title>
+<link rel='stylesheet' id='wp-block-library-css'  href='style.css' type='text/css' media='all' />
+</head>
+<body>
+    <div class="container">
+      <form class="decor" action="SendData.php" method="POST" name="commentForm">
+         <div class="form-left-decoration"></div>
+         <div class="form-right-decoration"></div>
+         <div class="circle"></div>
+         <div class="form-inner">
+		 <h3>Оставить комментарий</h3>
+            <input type="text" name="name" id="name" placeholder="Имя">
+            <input type="text" name="email" id="email" type="text" placeholder="Email">
+			<textarea name="comment" id="comment" placeholder="Сообщение..." rows="3"></textarea>
+            <input type="submit" name="sub">
+         </div>
+      </form>
+	
+	<div name="commentsBlock">
+    <div name="head">
+	<h3>Комментарии:</h3>
+    </div>
+	
+    <div name="body">
+    <?php foreach ($comments as $comment): ?>
+    <div class="comments">
+	<p>Имя: <?php echo $comment['name']?></p>
+    <p>E-mail: <?php echo $comment['email']?></p>
+    <p>Комментарий: <?php echo $comment['comment']?></p>
+	</div>
+<?php endforeach; ?>
+    
+	</div>
+</div>
+</div>
+</body>
+</html>
